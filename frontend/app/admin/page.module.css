@@ -1,0 +1,96 @@
+.page {
+  min-height: 100vh;
+  padding-bottom: 80px;
+}
+
+.header {
+  padding: 16px 0;
+  border-bottom: 1px solid var(--border);
+  background: rgba(3, 7, 18, 0.8);
+  backdrop-filter: blur(20px);
+  margin-bottom: 40px;
+}
+
+.back {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 600;
+}
+
+.hero {
+  margin-bottom: 24px;
+}
+
+.title {
+  margin-top: 14px;
+  margin-bottom: 12px;
+}
+
+.subtitle {
+  max-width: 760px;
+  font-size: 1rem;
+}
+
+.notice,
+.error {
+  padding: 18px 22px;
+  margin-bottom: 24px;
+}
+
+.error {
+  border-color: rgba(239, 68, 68, 0.25);
+  color: var(--danger);
+}
+
+.summaryGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.statCard {
+  padding: 22px;
+}
+
+.statLabel {
+  display: block;
+  color: var(--text-muted);
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 8px;
+}
+
+.statValue {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  color: var(--text-primary);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.panel {
+  padding: 24px;
+}
+
+.panel h2 {
+  margin-bottom: 18px;
+  font-size: 1.1rem;
+}
+
+.chartWrap {
+  width: 100%;
+  min-height: 280px;
+}
+
+@media (max-width: 900px) {
+  .summaryGrid,
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
