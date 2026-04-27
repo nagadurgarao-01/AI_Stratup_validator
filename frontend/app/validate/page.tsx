@@ -56,6 +56,15 @@ export default function ValidatePage() {
   const abortRef = useRef<AbortController | null>(null);
   const recognitionRef = useRef<any>(null);
 
+  const getApiBase = useCallback((): string => {
+    return (
+      process.env.NEXT_PUBLIC_API_URL ||
+      (window.location.hostname === "localhost"
+        ? "http://localhost:8000"
+        : `http://${window.location.hostname}:8000`)
+    );
+  }, []);
+
   const getAuthToken = useCallback(async (): Promise<string | null> => {
     if (typeof window === "undefined") {
       return null;
@@ -80,7 +89,8 @@ export default function ValidatePage() {
     }
 
     try {
-      await fetch("http://localhost:8000/api/metrics/event", {
+      const API_BASE = getApiBase();
+      await fetch(`${API_BASE}/api/metrics/event`, {
         method: "POST",
         headers,
         body: JSON.stringify({ event_type: eventType, payload }),
@@ -88,7 +98,7 @@ export default function ValidatePage() {
     } catch {
       // Metrics should never block UX.
     }
-  }, [getAuthToken]);
+  }, [getApiBase, getAuthToken]);
 
   useEffect(() => {
     const trackView = async () => {
@@ -170,8 +180,7 @@ export default function ValidatePage() {
       headers.Authorization = `Bearer ${token}`;
     }
 
-    const API_BASE = process.env.NEXT_PUBLIC_API_URL || 
-      (window.location.hostname === "localhost" ? "http://localhost:8000" : `http://${window.location.hostname}:8000`);
+    const API_BASE = getApiBase();
 
     try {
       const response = await fetch(`${API_BASE}/api/validate`, {
