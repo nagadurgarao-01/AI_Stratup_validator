@@ -233,10 +233,10 @@ export default function ReportPage() {
   const blueOcean = (competitors.blue_ocean_strategy as Record<string, unknown[]>) || {};
   const brandIdentity = (assets.brand_identity as Record<string, unknown>) || {};
   const businessPlan = (assets.business_plan_outline as Record<string, unknown>) || {};
-  const asst = assets;
-  const mr = market;
-  const comp = competitors;
-  const fin = financial;
+  const asst: any = assets;
+  const mr: any = market;
+  const comp: any = competitors;
+  const fin: any = financial;
   const sdg = (report.sdg as Record<string, unknown>) || {};
   const pivots = (report.pivots as unknown[]) || [];
 
