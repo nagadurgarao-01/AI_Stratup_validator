@@ -221,7 +221,7 @@ export default function ReportPage() {
   const financial = (report.financial_model as Record<string, unknown>) || {};
   const market = (report.market_research as Record<string, unknown>) || {};
   const competitors = (report.competitor_intel as Record<string, unknown>) || {};
-  const critic = (report.critic as Record<string, unknown>) || {};
+  const critic: any = (report.critic as Record<string, unknown>) || {};
   const assets = (report.assets as Record<string, unknown>) || {};
   const score = (financial.viability_score as number) || 0;
   const color = (financial.viability_color as string) || "amber";
