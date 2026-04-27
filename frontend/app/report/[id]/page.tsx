@@ -237,7 +237,7 @@ export default function ReportPage() {
   const mr: any = market;
   const comp: any = competitors;
   const fin: any = financial;
-  const sdg = (report.sdg as Record<string, unknown>) || {};
+  const sdg: any = (report.sdg as Record<string, unknown>) || {};
   const pivots = (report.pivots as unknown[]) || [];
 
   return (
