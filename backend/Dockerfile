@@ -14,13 +14,11 @@ COPY pyproject.toml requirements.txt* ./
 # Install all dependencies into a local dir for copying later
 RUN pip install --no-cache-dir --upgrade pip \
     && pip install --no-cache-dir \
-        "genkit>=0.9.0" \
-        "genkit-google-genai>=0.9.0" \
         "fastapi>=0.115.0" \
         "uvicorn[standard]>=0.32.0" \
         "python-dotenv>=1.0.0" \
         "pydantic>=2.9.0" \
-        "google-generativeai>=0.8.0" \
+        "google-genai>=0.3.0" \
         "firebase-admin>=6.5.0" \
         "google-cloud-dlp>=3.18.0" \
         "sse-starlette>=2.1.0" \
