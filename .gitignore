@@ -19,6 +19,7 @@ __pycache__/
 .env.development.local
 .env.test.local
 .env.production.local
+.env.production
 
 # Tools/Agents
 .agents/
@@ -35,3 +36,10 @@ Thumbs.db
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+# Deployment secrets — NEVER commit these
+service-account.json
+*.json.key
+github-actions-sa-key.json
+firebase-adminsdk-*.json
+
